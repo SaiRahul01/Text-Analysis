@@ -22,7 +22,7 @@ function App() {
     else
     {
       setmode('dark');
-      document.body.style.backgroundColor='grey';
+      document.body.style.backgroundColor='#222831';
     }
 
   }

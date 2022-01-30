@@ -55,9 +55,10 @@ export default function TextForm(props) {
     <>
     
         <div className="mb-3 my-5 container">
-        <h3  className="form-label">{props.cont}</h3>
+        <h3  className="form-label" style={{color:props.mode==='dark'?'white':'black'}}>{props.cont}</h3>
             
-        <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='dark'?'black':'white'},{color:props.mode==='dark'?'white':'black'}}
+        <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='dark'?'#222831':'white',
+        color:props.mode==='light'?'black':'white'}}
         id="userText" onChange={handleonchange} rows="8"></textarea><br></br>
         
         <button className="btn btn-primary mx-2" onClick={handleupperbtn}>Convert to UpperCase</button>
@@ -68,9 +69,9 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2" onClick={handlecopy}>Copy to Clipboard</button>
         </div>
         <div className="container" id='wtf' >
-            <h3>Text Summary</h3>
-            <p>Characters: {chars}</p>
-            <p>Words: {words}</p>
+            <h3 style={{color:props.mode==='dark'?'white':'black'}}>Text Summary</h3>
+            <p style={{color:props.mode==='dark'?'white':'black'}}>Characters: {chars}</p>
+            <p style={{color:props.mode==='dark'?'white':'black'}}>Words: {words}</p>
             {/* <p>Time Read: {0.08*words} Minutes</p> */}
 
         </div>
