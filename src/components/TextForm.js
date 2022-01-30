@@ -46,9 +46,33 @@ export default function TextForm(props) {
         let filter=text.split(/[ ]+/);
         setText(filter.join(' '));
     }
+    const getwords=(cnt)=>{
+        if(cnt===''){
+            return 0;
+        }
+        let a=cnt.split(' ');
+        let len=a.length;
+        let count=0;
+        for(let i=0;i<len;i++)
+        {
+            if(a[i]==' ')
+            {
+                count++;
+            }
 
-    let words=text.split(" ").length;
+        }
+        
+        return len-count;
+
+    }
+
+    let words=getwords(text);
+    
     let chars=text.length;
+    let spaces=text.split(' ');
+    chars-=spaces.length;
+    chars++;
+   
 
 
   return (

@@ -6,6 +6,12 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 // const gg=(<h4>Lmao</h4>);
 
@@ -43,14 +49,24 @@ function App() {
   }
   return (
     <>
-    <Navbar title="Text Analysis" mode={mode} togglemode={switchmode}></Navbar>
+    <Router>
+    <Navbar title="Text Analysiss" mode={mode} togglemode={switchmode}></Navbar><br />
     <Alert aalert={alert}/>
     <div className="container">
-        <TextForm cont="Enter the Text to analyze" mode={mode}></TextForm>
+      <Routes>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/">
+            <TextForm cont="Enter the Text to analyze" mode={mode}></TextForm>
+            </Route>
+          </Routes>
+        
+        
     </div>
-    {/* <div className="container">
-    <About/>
-    </div> */}
+    </Router>
+
+  
     
     
 
