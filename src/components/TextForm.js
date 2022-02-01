@@ -36,9 +36,10 @@ export default function TextForm(props) {
         chars=0;
     }
     const handlecopy=()=>{
-        let textt=document.getElementById('userText');
+        // let textt=document.getElementById('userText');
         // textt.select();
-        navigator.clipboard.writeText(textt.value);
+        navigator.clipboard.writeText(text);
+        props.showAlert("copied to Clipboard","success");
 
 
     }
@@ -92,11 +93,16 @@ export default function TextForm(props) {
         <i class="fas fa-clipboard"></i>
         <button className="btn btn-primary mx-2" onClick={handlecopy}>Copy to Clipboard</button>
         </div>
+        
+        
         <div className="container" id='wtf' >
-            <h3 style={{color:props.mode==='dark'?'white':'black'}}>Text Summary</h3>
-            <p style={{color:props.mode==='dark'?'white':'black'}}>Characters: {chars}</p>
-            <p style={{color:props.mode==='dark'?'white':'black'}}>Words: {words}</p>
-            {/* <p>Time Read: {0.08*words} Minutes</p> */}
+        <h2 style={{color:props.mode==='dark'?'white':'black'}}>Summary</h2>
+        <h4 style={{color:props.mode==='dark'?'white':'black'}}>Words: <p style={{display:'inline'}}>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</p> </h4>
+        <h4 style={{color:props.mode==='dark'?'white':'black'}}>Characters: <p style={{display:'inline'}}>{text.length} </p></h4>
+            
+            
+            
+            
 
         </div>
     </>

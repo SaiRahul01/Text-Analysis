@@ -58,7 +58,7 @@ function App() {
               <About />
             </Route>
             <Route exact path="/">
-            <TextForm cont="Enter the Text to analyze" mode={mode}></TextForm>
+            <TextForm cont="Enter the Text to analyze" mode={mode} showAlert={showAlert}></TextForm>
             </Route>
           </Routes>
         
